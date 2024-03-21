@@ -1,4 +1,4 @@
-package sandbox;
+package shortestpath;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

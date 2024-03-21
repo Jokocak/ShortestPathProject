@@ -1,4 +1,4 @@
-package sandbox;
+package shortestpath;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,6 +6,11 @@ import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import shortestpath.IOManager;
+import shortestpath.Landmark;
+import shortestpath.Trail;
+import shortestpath.TrailManager;
 
 /**
  * Tests Graph class.
