@@ -27,24 +27,24 @@ This project implements a weighted graph data structure using an Adjacency List,
 ## Example
 
 ```java
-		// Initialize with number of vertices you wish to have
-		WeightedGraph<String> graph = new WeightedGraph<>(5);
+// Initialize with number of vertices you wish to have
+WeightedGraph<String> graph = new WeightedGraph<>(5);
 		
-		// Add vertices
-		graph.addVertex("A");
-		graph.addVertex("B");
-		graph.addVertex("C");
-		graph.addVertex("D");
-		graph.addVertex("E");
+// Add vertices
+graph.addVertex("A");
+graph.addVertex("B");
+graph.addVertex("C");
+graph.addVertex("D");
+graph.addVertex("E");
 		
-		// Edge from A to B with weight 5
-		graph.addEdge("A", "B", 5);
+// Edge from A to B with weight 5
+graph.addEdge("A", "B", 5);
 		
-		// Add more vertices and edges...
+// Add more vertices and edges...
 
-		// Returns the distance of the shortest path
-		int shortestPath = graph.dijkstrasAlgorithm("A", "B");
-		System.out.println("Shortest Path from A to B: " + shortestPath);
+// Returns the distance of the shortest path
+int shortestPath = graph.dijkstrasAlgorithm("A", "B");
+System.out.println("Shortest Path from A to B: " + shortestPath);
 ```
 
 ## License
