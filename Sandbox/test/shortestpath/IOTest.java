@@ -7,11 +7,6 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import shortestpath.IOManager;
-import shortestpath.Landmark;
-import shortestpath.Trail;
-import shortestpath.TrailManager;
-
 /**
  * Tests Graph class.
  * 
@@ -50,6 +45,8 @@ class IOTest {
 	private Landmark landTwelve;
 	/** Landmark 13 */
 	private Landmark landThirteen;
+	/** Landmark 14 */
+	private Landmark landFourteen;
 	/** Trail 1 */
 	private Trail trailOne;
 	/** Trail 2 */
@@ -72,6 +69,10 @@ class IOTest {
 	private Trail trailTen;
 	/** Trail 11 */
 	private Trail trailEleven;
+	/** Trail 12 */
+	private Trail trailTwelve;
+	/** Trail 13 */
+	private Trail trailThirteen;
 
 	/**
 	 * Initializes all landmarks
@@ -91,18 +92,21 @@ class IOTest {
 		landEleven = new Landmark("L11", "Eggmanland", "Level");
 		landTwelve = new Landmark("L12", "Dragon Road", "Level");
 		landThirteen = new Landmark("L13", "Green Hill Paradise", "Zone");
+		landFourteen = new Landmark("L14", "Star Light Zone", "Zone");
 
 		trailOne = new Trail("L01", "L12", 25);
 		trailTwo = new Trail("L01", "L08", 50);
 		trailThree = new Trail("L01", "L13", 25);
-		trailFour = new Trail("L02", "L04", 75);
-		trailFive = new Trail("L02", "L10", 100);
-		trailSix = new Trail("L03", "L05", 125);
-		trailSeven = new Trail("L03", "L09", 150);
-		trailEight = new Trail("L04", "L06", 175);
-		trailNine = new Trail("L07", "L08", 6000);
-		trailTen = new Trail("L09", "L10", 225);
-		trailEleven = new Trail("L10", "L12", 250);
+		trailFour = new Trail("L01", "L14", 500);
+		trailFive = new Trail("L02", "L04", 75);
+		trailSix = new Trail("L02", "L10", 100);
+		trailSeven = new Trail("L03", "L05", 125);
+		trailEight = new Trail("L03", "L09", 150);
+		trailNine = new Trail("L04", "L06", 175);
+		trailTen = new Trail("L07", "L08", 6000);
+		trailEleven = new Trail("L09", "L10", 225);
+		trailTwelve = new Trail("L10", "L12", 250);
+		trailThirteen = new Trail("L12", "L14", 25);
 
 		landmarks = IOManager.readLandmarks("input/Sonic_Landmarks.csv");
 		trails = IOManager.readTrails("input/Sonic_Trails.csv");
@@ -110,7 +114,7 @@ class IOTest {
 
 	@Test
 	void testReadLandmarksAndTrails() {
-		assertEquals(13, landmarks.size());
+		assertEquals(14, landmarks.size());
 		assertEquals(landOne.getDescription(), landmarks.get(0).getDescription());
 		assertEquals(landTwo.getDescription(), landmarks.get(1).getDescription());
 		assertEquals(landThree.getDescription(), landmarks.get(2).getDescription());
@@ -124,8 +128,9 @@ class IOTest {
 		assertEquals(landEleven.getDescription(), landmarks.get(10).getDescription());
 		assertEquals(landTwelve.getDescription(), landmarks.get(11).getDescription());
 		assertEquals(landThirteen.getDescription(), landmarks.get(12).getDescription());
+		assertEquals(landFourteen.getDescription(), landmarks.get(13).getDescription());
 
-		assertEquals(11, trails.size());
+		assertEquals(13, trails.size());
 		assertEquals(trailOne.getLandmarkIdOne(), trails.get(0).getLandmarkIdOne());
 		assertEquals(trailOne.getLandmarkIdTwo(), trails.get(0).getLandmarkIdTwo());
 		assertEquals(trailTwo.getLandmarkIdOne(), trails.get(1).getLandmarkIdOne());
@@ -148,6 +153,10 @@ class IOTest {
 		assertEquals(trailTen.getLandmarkIdTwo(), trails.get(9).getLandmarkIdTwo());
 		assertEquals(trailEleven.getLandmarkIdOne(), trails.get(10).getLandmarkIdOne());
 		assertEquals(trailEleven.getLandmarkIdTwo(), trails.get(10).getLandmarkIdTwo());
+		assertEquals(trailTwelve.getLandmarkIdOne(), trails.get(11).getLandmarkIdOne());
+		assertEquals(trailTwelve.getLandmarkIdTwo(), trails.get(11).getLandmarkIdTwo());
+		assertEquals(trailThirteen.getLandmarkIdOne(), trails.get(12).getLandmarkIdOne());
+		assertEquals(trailThirteen.getLandmarkIdTwo(), trails.get(12).getLandmarkIdTwo());
 	}
 
 }

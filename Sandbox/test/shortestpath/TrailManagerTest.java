@@ -9,10 +9,6 @@ import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import shortestpath.Landmark;
-import shortestpath.Trail;
-import shortestpath.TrailManager;
-
 /**
  * Tests the TrailManager class.
  * 
@@ -331,7 +327,7 @@ class TrailManagerTest {
 		assertEquals(0, distances.get(manager.getLandmarkByID("L12")));
 		assertEquals(0, distances.get(manager.getLandmarkByID("L13")));
 		assertEquals(0, distances.get(manager.getLandmarkByID("L14")));
-		
+
 		// Test distances with Landmark 1
 		distances = manager.getDistancesToDestinations("L01");
 		assertEquals(14, distances.size());
