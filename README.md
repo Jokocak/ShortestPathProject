@@ -35,10 +35,6 @@ List<String> shortestPath = graph.dijkstraShortestPath("A", "B");
 System.out.println("Shortest Path from A to B: " + shortestPath); // Output: [A, B]
 ```
 
-## Contribution
-
-Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or create a pull request.
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
