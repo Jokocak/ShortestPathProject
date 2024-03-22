@@ -1,4 +1,4 @@
-package sandbox;
+package shortestpath;
 
 public class Trail {
 	/** The id of landmark one */

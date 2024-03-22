@@ -1,15 +1,13 @@
-package sandbox;
+package shortestpath;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class GraphTest {
+class WeightedGraphTest {
 	/** The graph to test */
-	Graph<Landmark> map;
+	WeightedGraph<Landmark> map;
 	/** Landmark 1 */
 	private Landmark landOne;
 	/** Landmark 2 */
@@ -56,10 +54,10 @@ class GraphTest {
 		landEleven = new Landmark("L11", "Eggmanland", "Level");
 		landTwelve = new Landmark("L12", "Dragon Road", "Level");
 		landThirteen = new Landmark("L13", "Green Hill Paradise", "Zone");
-		
+
 		// Initializes Graph of Landmarks
-		map = new Graph<>(13);
-		
+		map = new WeightedGraph<>(13);
+
 		// Add Vertices
 		map.addVertex(landOne);
 		map.addVertex(landTwo);
@@ -74,45 +72,38 @@ class GraphTest {
 		map.addVertex(landEleven);
 		map.addVertex(landTwelve);
 		map.addVertex(landThirteen);
-		
+
 		// Add Edges
-		map.addEdge(landOne, landTwelve);
-		map.addEdge(landOne, landEight);
-		map.addEdge(landOne, landThirteen);
-		map.addEdge(landTwo, landFour);
-		map.addEdge(landTwo, landTen);
-		map.addEdge(landThree, landFive);
-		map.addEdge(landThree, landNine);
-		map.addEdge(landFour, landSix);
-		map.addEdge(landSeven, landEight);
-		map.addEdge(landNine, landTen);
-		map.addEdge(landTen, landTwelve);
+		map.addEdge(landOne, landTwelve, 25);
+		map.addEdge(landOne, landEight, 50);
+		map.addEdge(landOne, landThirteen, 25);
+		map.addEdge(landTwo, landFour, 75);
+		map.addEdge(landTwo, landTen, 100);
+		map.addEdge(landThree, landFive, 125);
+		map.addEdge(landThree, landNine, 150);
+		map.addEdge(landFour, landSix, 175);
+		map.addEdge(landSeven, landEight, 6000);
+		map.addEdge(landNine, landTen, 225);
+		map.addEdge(landTen, landTwelve, 250);
 	}
-	
+
 	@Test
 	void testBiDirectionalSearch() {
 		// Path to distant Landmark
-		List<Landmark> path = map.biDirectionalSearch(landOne, landTwo);
-		assertEquals(4, path.size());
-		assertEquals(landOne, path.get(0));
-		assertEquals(landTwelve, path.get(1));
-		assertEquals(landTen, path.get(2));
-		assertEquals(landTwo, path.get(3));
-		
+		int distance = map.dijkstrasAlgorithm(landOne, landTwo);
+		assertEquals(375, distance);
+
 		// Path to neighboring Landmark
-		List<Landmark> path2 = map.biDirectionalSearch(landOne, landTwelve);
-		assertEquals(2, path2.size());
-		assertEquals(landOne, path.get(0));
-		assertEquals(landTwelve, path.get(1));
-		
+		distance = map.dijkstrasAlgorithm(landOne, landTwelve);
+		assertEquals(25, distance);
+
 		// Path to self
-		List<Landmark> path3 = map.biDirectionalSearch(landOne, landOne);
-		assertEquals(1, path3.size());
-		assertEquals(landOne, path.get(0));
-		
+		distance = map.dijkstrasAlgorithm(landOne, landOne);
+		assertEquals(0, distance);
+
 		// Path to where there is no connection
-		List<Landmark> path4 = map.biDirectionalSearch(landEleven, landOne);
-		assertNull(path4);
+		distance = map.dijkstrasAlgorithm(landEleven, landOne);
+		assertEquals(0, distance);
 	}
 
 }

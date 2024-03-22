@@ -1,4 +1,4 @@
-package sandbox;
+package shortestpath;
 
 /**
  * This class represents a Landmark to travel to, storing data on its id,

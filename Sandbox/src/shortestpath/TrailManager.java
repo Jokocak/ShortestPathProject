@@ -1,4 +1,4 @@
-package sandbox;
+package shortestpath;
 
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
@@ -72,9 +72,9 @@ public class TrailManager {
 			return distances;
 		}
 
-		// Gets distances with Bidirectional Search Algorithm
+		// Gets distances with Dijkstra's Search Algorithm
 		for (Landmark landmark : landmarks) {
-			distances.put(landmark, map.biDirectionalSearch(origin, landmark));
+			distances.put(landmark, map.dijkstrasAlgorithm(origin, landmark));
 		}
 
 		// Return map with distances

@@ -1,4 +1,4 @@
-package sandbox;
+package shortestpath;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -312,7 +312,7 @@ class TrailManagerTest {
 
 		// Tests distances with Landmark with no trails
 		Map<Landmark, Integer> distances = manager.getDistancesToDestinations("L11");
-		assertEquals(13, distances.size());
+		assertEquals(14, distances.size());
 		assertEquals(0, distances.get(manager.getLandmarkByID("L01")));
 		assertEquals(0, distances.get(manager.getLandmarkByID("L02")));
 		assertEquals(0, distances.get(manager.getLandmarkByID("L03")));
@@ -325,6 +325,26 @@ class TrailManagerTest {
 		assertEquals(0, distances.get(manager.getLandmarkByID("L10")));
 		assertEquals(0, distances.get(manager.getLandmarkByID("L11")));
 		assertEquals(0, distances.get(manager.getLandmarkByID("L12")));
+		assertEquals(0, distances.get(manager.getLandmarkByID("L13")));
+		assertEquals(0, distances.get(manager.getLandmarkByID("L14")));
+
+		// Test distances with Landmark 1
+		distances = manager.getDistancesToDestinations("L01");
+		assertEquals(14, distances.size());
+		assertEquals(0, distances.get(manager.getLandmarkByID("L01")));
+//		assertEquals(0, distances.get(manager.getLandmarkByID("L02")));
+//		assertEquals(0, distances.get(manager.getLandmarkByID("L03")));
+//		assertEquals(0, distances.get(manager.getLandmarkByID("L04")));
+//		assertEquals(0, distances.get(manager.getLandmarkByID("L05")));
+//		assertEquals(0, distances.get(manager.getLandmarkByID("L06")));
+//		assertEquals(0, distances.get(manager.getLandmarkByID("L07")));
+//		assertEquals(0, distances.get(manager.getLandmarkByID("L08")));
+//		assertEquals(0, distances.get(manager.getLandmarkByID("L09")));
+//		assertEquals(0, distances.get(manager.getLandmarkByID("L10")));
+//		assertEquals(0, distances.get(manager.getLandmarkByID("L11")));
+//		assertEquals(0, distances.get(manager.getLandmarkByID("L12")));
+//		assertEquals(0, distances.get(manager.getLandmarkByID("L13")));
+		assertEquals(50, distances.get(manager.getLandmarkByID("L14")));
 	}
 
 	/**
