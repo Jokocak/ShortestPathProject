@@ -13,7 +13,7 @@ This project implements a weighted graph data structure using an Adjacency List,
 1. **Installation**: Clone the repository to your local machine.
 
    ```bash
-   git clone <repository_url>
+   git clone [<repository_url>](https://github.com/Jokocak/ShortestPathProject.git)
    ```
 
 2. **Usage**:
