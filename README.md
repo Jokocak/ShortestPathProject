@@ -7,6 +7,8 @@ This project implements a weighted graph data structure using an Adjacency List,
 - **Weighted Graph**: The project provides a robust implementation of a weighted graph, allowing users to add vertices and edges with associated weights.
 - **Adjacency List Representation**: The graph is represented internally using an Adjacency List, which efficiently stores connections between vertices.
 - **Dijkstra's Algorithm**: Utilizing Dijkstra's Algorithm, the project can efficiently find the shortest path between any two vertices in the graph.
+- **Testing**: The graph can be tested using the `ShortestPathManager` class, which provides methods to interact with the graph and test its functionalities.
+- **CSV Import**: Users can create 'Landmark' (Vertex) and 'Trail' (Edge) CSV files to construct a graph internally with `TrailManager`. The `TrailManager` can compute distances from any landmark to all other landmarks, finding the shortest distance available. Example Landmark and Trail files are provided to show how to format.
   
 ## How to Use
 
